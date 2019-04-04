@@ -1,0 +1,106 @@
+[
+{
+    "model": "products.product",
+    "pk": 1,
+    "fields": {
+        "seller": 3,
+        "media": "automotive/tcar.jpg",
+        "title": "Automotive",
+        "slug": "automotive",
+        "description": "asd",
+        "price": "9.99",
+        "sale_active": false,
+        "sale_price": "6.99"
+    }
+},
+{
+    "model": "products.product",
+    "pk": 2,
+    "fields": {
+        "seller": 3,
+        "media": "kras/girl_mountain.jpg",
+        "title": "Kras",
+        "slug": "kras",
+        "description": "kras",
+        "price": "9.99",
+        "sale_active": false,
+        "sale_price": "6.99"
+    }
+},
+{
+    "model": "products.thumbnail",
+    "pk": 7,
+    "fields": {
+        "product": 1,
+        "type": "hd",
+        "height": "247",
+        "width": "500",
+        "media": "automotive/tcar_VDVdO2q.jpg"
+    }
+},
+{
+    "model": "products.thumbnail",
+    "pk": 8,
+    "fields": {
+        "product": 1,
+        "type": "sd",
+        "height": "173",
+        "width": "350",
+        "media": "automotive/tcar_JDJUsYO.jpg"
+    }
+},
+{
+    "model": "products.thumbnail",
+    "pk": 9,
+    "fields": {
+        "product": 1,
+        "type": "micro",
+        "height": "74",
+        "width": "150",
+        "media": "automotive/tcar_2bja8YK.jpg"
+    }
+},
+{
+    "model": "products.thumbnail",
+    "pk": 10,
+    "fields": {
+        "product": 2,
+        "type": "hd",
+        "height": "339",
+        "width": "500",
+        "media": "kras/girl_mountain_Jasyv78.jpg"
+    }
+},
+{
+    "model": "products.thumbnail",
+    "pk": 11,
+    "fields": {
+        "product": 2,
+        "type": "sd",
+        "height": "237",
+        "width": "350",
+        "media": "kras/girl_mountain_NE4RlRr.jpg"
+    }
+},
+{
+    "model": "products.thumbnail",
+    "pk": 12,
+    "fields": {
+        "product": 2,
+        "type": "micro",
+        "height": "101",
+        "width": "150",
+        "media": "kras/girl_mountain_NitQGH7.jpg"
+    }
+},
+{
+    "model": "products.myproducts",
+    "pk": 3,
+    "fields": {
+        "user": 1,
+        "products": [
+            1
+        ]
+    }
+}
+]

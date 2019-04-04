@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% block content %}
+    <div>
+    <h1>Suggested Products</h1>
+    {% include "products/product_list_snipet.html" with product_list=products %}
+    </div>
+    <div>
+    <h1>Top Tags</h1>
+        {% for tag in top_tags %}
+        <li>
+            <a href="{{ tag.get_absolute_url }}">{{ tag }}</a>
+        </li>
+        {% endfor %}
+    </div>
+
+
+    {% if curated.count > 0 %}
+    {% for curated_section in curated %}
+        <h3>{{ curated_section.section_name }}</h3>
+        {% include "products/product_list_snipet.html" with product_list=curated_section.products.all %}
+
+    {% endfor %}
+    {% endif %}
+
+{% endblock content %}

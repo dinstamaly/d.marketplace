@@ -1,0 +1,48 @@
+{% extends "base.html" %}
+
+
+{% block content %}
+    {#<h1>Seller Dashboard</h1>#}
+
+    <h1>{{ title }}</h1>
+
+    {% if apply_form %}
+        <form method="POST" action="">
+            {% csrf_token %}
+            <h3>Rules of the Marketplace</h3>
+            <ol>
+                <li>Do not steal</li>
+                <li>Be kind</li>
+                <li>Sell well</li>
+            </ol>
+            {{ apply_form.as_p }}
+            {#            <br>#}
+            <input type="submit">
+        </form>
+    {% endif %}
+
+    {% if products %}
+         <div class="pull-right col-sidebar">
+         <h4>My Products <br>
+             <small><a href="{% url "sellers:product_create" %}">Add</a> | <a href="{% url "sellers:product_list" %}">View All</a></small>
+         </h4>
+            {% include "products/product_list_snipet.html" with product_list=products %}
+        </div>
+    {% endif %}
+
+    {% if transactions %}
+         <div class="pull-left col-primary">
+         <h3>Today's sales are $ {{ today_sales }}</h3>
+            {% include "sellers/transaction_list.html" with transaction_list=transactions_today %}
+             <br>
+
+         <h3>Recent Transaction History (Total Sales: $ {{ total_sales }})</h3>
+            {% include "sellers/transaction_list.html" with transaction_list=transactions %}
+
+         <p>
+             <a href="{% url "sellers:transactions" %}">View all Transactions</a>
+         </p>
+        </div>
+    {% endif %}
+
+{% endblock content %}

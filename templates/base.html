@@ -1,0 +1,99 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <meta charset="UTF-8">
+    <title></title>
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <style>
+        .main-content {
+            clear: both;
+        }
+
+        .main-nav {
+            width: 800px;
+            margin: 10px auto;
+        }
+
+        .main-nav li {
+            display: inline;
+        }
+
+        .first-nav {
+            padding-left: 0px;
+        }
+
+        .second-nav {
+            padding-right: 40px;
+        }
+
+        .pull-right {
+            float: right;
+        }
+
+        .pull-left {
+            float: left;
+        }
+
+        .col-primary {
+            width: 85%;
+        }
+
+        .col-sidebar {
+            padding-top: 20px;
+            width: 15%;
+        }
+
+        .clearfix {
+            clear: both;
+        }
+
+        button.buy-btn {
+            border: 1px solid #f68787 !important;
+            background: #f68787 !important;
+        }
+
+        button.buy-btn .ui-button-text {
+            color: #fff;
+        }
+
+        .ui-widget-header {
+            border: 1px solid #dfe2e2 !important;
+            background: #dfe2e2 !important;
+        }
+
+        {% block style %}{% endblock style %}
+    </style>
+</head>
+<body>
+<nav class="main-nav">
+    <ul class="pull-left first-nav">
+        <li><a href="{% url "dashboard" %}">Dindin</a></li>
+    </ul>
+    <ul class="pull-right second-nav">
+        <li><a href="{% url "products:list" %}">Products</a></li>
+        <li><a href="{% url "tags:list" %}">Tags</a></li>
+        <li><a href="{% url "library" %}">Library</a></li>
+        <li><a href="{% url "sellers:dashboard" %}">seller accaunt</a></li>
+    </ul>
+
+</nav>
+<div class="main-content">
+    {% block content %}
+        <p>This is awesome</p>
+    {% endblock content %}
+
+</div>
+<script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
+<script src="{% static 'js/django.csrf.js' %}"></script>
+<script>
+    $(document).ready(function () {
+        {% block jquery %}
+
+        {% endblock jquery %}
+    })
+</script>
+</body>
+</html>
