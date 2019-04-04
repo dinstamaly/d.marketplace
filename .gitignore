@@ -12,6 +12,8 @@ pip-selfcheck.json
 *.py[cod]
 *.DS_Store
 .git/
+migrations/
+
 
 
 # Byte-compiled / optimized / DLL files
